@@ -30,6 +30,12 @@ public:
 5. Play the game and press tilde \` to bring up the console. Your cheats will
    be listed in Cyan with the prefix set in CheatPrefix.
 
+### Note for Unreal >= 5.4
+
+The function `GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags)` has been deprecated,
+and another overload `GetAssetRegistryTags(FAssetRegistryTagsContext Context)` should be
+used instead. The code is almost identical inside the Base cheat manager class, except for the
+return statement which should now be `Context.AddTag(CommandTag);`.
 
 ## Thanks
 
